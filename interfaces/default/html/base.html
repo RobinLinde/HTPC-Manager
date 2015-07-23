@@ -85,10 +85,10 @@ webdir = htpc.WEBDIR
                     % endif
                     <!-- start phone tablet -->
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}about"><i class="fa fa-info-circle"></i>  About</a>
+                        <a href="${htpc.WEBDIR}about"><i class="fa fa-info-circle"></i>  Over</a>
                     </li>
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a class="dash-edit" href="#"><i class="fa fa-arrows"></i> Edit Dash</a>
+                        <a class="dash-edit" href="#"><i class="fa fa-arrows"></i> Bewerk Dashboard</a>
                     </li>
                     <!-- Didnt find a good way to add this in mobile/tablet view.
                     <li class="hidden-desktop visible-phone visible-tablet">
@@ -96,24 +96,24 @@ webdir = htpc.WEBDIR
                     </li>
                     -->
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="#" class="btn-check-update"><i class="fa fa-eye"></i> Check for updates</a>
+                        <a href="#" class="btn-check-update"><i class="fa fa-eye"></i> Check op updates</a>
                     </li>
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}settings/" id="btn-settings"><i class="fa fa-cog"></i> Settings</a>
+                        <a href="${htpc.WEBDIR}settings/" id="btn-settings"><i class="fa fa-cog"></i> Instellingen</a>
                     </li>
                     <li class="hidden-desktop visible-phone visible-tablet">
                         <a href="${htpc.WEBDIR}log/" id="btn-log"><i class="fa fa-list"></i> Log</a>
                     </li>
                     % if htpc.AUTH:
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}logout" class="confirm" title="Logout of HTPC Manager"><i class="fa fa-sign-out"></i> Logout</a>
+                        <a href="${htpc.WEBDIR}logout" class="confirm" title="Logout of HTPC Manager"><i class="fa fa-sign-out"></i> Log Uit</a>
                     </li>
                     % endif
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Restart HTPC Manager"><i class="fa fa-refresh"></i> Restart</a>
+                        <a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Restart HTPC Manager"><i class="fa fa-refresh"></i> Herstart</a>
                     </li>
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}shutdown" class="confirm" title="Shutdown HTPC Manager"><i class="fa fa-power-off"></i> Shutdown</a>
+                        <a href="${htpc.WEBDIR}shutdown" class="confirm" title="Shutdown HTPC Manager"><i class="fa fa-power-off"></i> Sluit Af</a>
                     </li>
 
                 </ul>
@@ -131,23 +131,23 @@ webdir = htpc.WEBDIR
                             <i class="fa fa-bars fa-inverse"></i>
                           </a>
                           <ul class="dropdown-menu pull-right">
-                            <li><a href="${htpc.WEBDIR}about"><i class="fa fa-info-circle"></i> About</a></li>
-                            <li><a href="#" class="btn-check-update"><i class="fa fa-eye"></i> Check for updates</a></li>
-                            <li><a href="${htpc.WEBDIR}settings/" id="btn-settings"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a class="dash-edit" href="${htpc.WEBDIR}#edit"><i class="fa fa-arrows"></i> Edit Dash</a></li>
-                            <li><a href="#" class="btn-menuorder"><i class="fa fa-sort"></i> Edit Menu</a></li>
+                            <li><a href="${htpc.WEBDIR}about"><i class="fa fa-info-circle"></i> Over</a></li>
+                            <li><a href="#" class="btn-check-update"><i class="fa fa-eye"></i> Check op updates</a></li>
+                            <li><a href="${htpc.WEBDIR}settings/" id="btn-settings"><i class="fa fa-cog"></i> Instellingen</a></li>
+                            <li><a class="dash-edit" href="${htpc.WEBDIR}#edit"><i class="fa fa-arrows"></i> Bewerk Dashboard</a></li>
+                            <li><a href="#" class="btn-menuorder"><i class="fa fa-sort"></i> Bewerk Menu</a></li>
                             <li><a href="${htpc.WEBDIR}log/" id="btn-log"><i class="fa fa-list"></i> Log</a></li>
                             % if htpc.AUTH:
-                            <li><a href="${htpc.WEBDIR}logout" class="confirm" title="Logout of HTPC Manager"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            <li><a href="${htpc.WEBDIR}logout" class="confirm" title="Logout of HTPC Manager"><i class="fa fa-sign-out"></i> Log Uit</a></li>
                             % endif
-                            <li><a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Restart HTPC Manager"><i class="fa fa-refresh"></i> Restart</a></li>
-                            <li><a href="${htpc.WEBDIR}shutdown" class="confirm" title="Shutdown HTPC Manager"><i class="fa fa-power-off"></i> Shutdown</a></li>
+                            <li><a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Restart HTPC Manager"><i class="fa fa-refresh"></i> Herstart</a></li>
+                            <li><a href="${htpc.WEBDIR}shutdown" class="confirm" title="Shutdown HTPC Manager"><i class="fa fa-power-off"></i> Sluit Af</a></li>
                           </ul>
                         </div>
                     </form>
                     <div class="btn-group hide" id="menu-editing">
-                        <i id="menu-save" class="btn fa fa-check" title="Save"></i>
-                        <i id="menu-cancel" class="btn fa fa-times" title="Discard"></i>
+                        <i id="menu-save" class="btn fa fa-check" title="Opslaan"></i>
+                        <i id="menu-cancel" class="btn fa fa-times" title="Verwerpen"></i>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ ${self.body()}
     <div class="footer2">
         <div class="navbar navbar-fixed-bottom footer2">
             <div class="container-fluid">
-                    You're running an unknown version of HTPC Manager. Use the updater <a href="do_update">Update</a>
+                    Je draait een onbekende versie van HTPC Manager. Gebruik de updater <a href="do_update">Update</a>
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
             <div>
         </div>
@@ -174,7 +174,7 @@ ${self.body()}
     <div class="footer2">
         <div class="navbar navbar-fixed-bottom">
             <div class="container-fluid">
-                A<a href="https://github.com/Hellowlol/HTPC-Manager/compare/${htpc.CURRENT_HASH}...${htpc.LATEST_HASH}"> newer version</a> is available. You're ${htpc.COMMITS_BEHIND} commits behind. <a href="do_update">Update</a>
+                Een<a href="https://github.com/Hellowlol/HTPC-Manager/compare/${htpc.CURRENT_HASH}...${htpc.LATEST_HASH}"> nieuwere versie</a> is beschikbaar. Je loopt ${htpc.COMMITS_BEHIND} versies achter. <a href="do_update">Update</a>
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
             </div>
         </div>

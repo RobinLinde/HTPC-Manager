@@ -3,40 +3,40 @@
 <div class="container-fluid">
     <div class="content maincontent">
         <h1 class="page-header page-title">
-            <a href="${webinterface}" target="_blank" title="Open original CouchPotato interface">${settings.get('couchpotato_name', 'CouchPotato')}</a>
+            <a href="${webinterface}" target="_blank" title="Open originele CouchPotato interface">${settings.get('couchpotato_name', 'CouchPotato')}</a>
             <div class="btn-group pull-right">
                  <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i>
 	                <i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu pull-right"> <!-- Skeleton -->
-                        <li><a href="Restart" class="ajax-confirm" title="Restart Couchpotato"><i class="fa fa-refresh"></i> Restart</a></li>
-                        <li><a href="Shutdown" class="ajax-confirm" title="Shutdown Couchpotato"><i class="fa fa-power-off"></i> Shutdown</a></li>
+                        <li><a href="Restart" class="ajax-confirm" title="Herstart Couchpotato"><i class="fa fa-refresh"></i> Herstarten</a></li>
+                        <li><a href="Shutdown" class="ajax-confirm" title="Sluit Couchpotato Af"><i class="fa fa-power-off"></i> Sluit Af</a></li>
                         <li><a id= "cp_update" href="#" title="Update Couchpotato"><i class="fa fa-eye"></i> Update</a></li>
-                        <li><a href="SearchAllWanted" class="ajax-confirm" title="Search all wanted movies"><i class="fa fa-search"></i> Search all wanted movies</a></li>
+                        <li><a href="SearchAllWanted" class="ajax-confirm" title="Search all wanted movies"><i class="fa fa-search"></i> Zoek voor alle gewilde films</a></li>
                         <li><a id="postprocess" href="#" title="Postprocess"><i class="fa fa-hdd-o"></i> Postprocess</a></li>
                     </ul>
             </div>
         </h1>
         <form id="searchform" class="well form-inline">
-            <input type="text" id="moviename" class="span6"  placeholder="Add new movie" />
-            <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
+            <input type="text" id="moviename" class="span6"  placeholder="Voeg nieuwe film toe" />
+            <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Zoek</button>
         </form>
         <ul class="cp_nav nav nav-tabs">
-			<li><a href="#library" data-toggle="tab">Library</a></li>
-            <li><a href="#wanted" data-toggle="tab">Wanted</a></li>
-            <li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>
-            <li><a href="#dashboardsoon" data-toggle="tab">Available soon</a></li>
+			<li><a href="#library" data-toggle="tab">Bibliotheek</a></li>
+            <li><a href="#wanted" data-toggle="tab">Gewild</a></li>
+            <li><a href="#suggestions" data-toggle="tab">Suggesties</a></li>
+            <li><a href="#dashboardsoon" data-toggle="tab">Binnenkort beschikbaar</a></li>
             <!--<li><a href="#charts" data-toggle="tab">Charts</a></li>-->
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts
                 <i class="fa fa-caret-down"></i></a>
                 <ul class="cp_chart_dropdown dropdown-menu">
-                    <!--<li><a href="#artists" data-toggle="tab">Artists</a></li>-->
+                    <!--<li><a href="#artists" data-toggle="tab">Artiesten</a></li>-->
                     <!--<li><a href="#albums" data-toggle="tab">Albums</a></li>-->
-                    <!--<li><a href="#songs" data-toggle="tab">Songs</a></li>-->
+                    <!--<li><a href="#songs" data-toggle="tab">Nummers</a></li>-->
                 </ul>
             </li>
-            <li><a href="#history" data-toggle="tab">History</a></li>
-            <li class="hidden"><a href="#result" data-toggle="tab">Search</a></li>
+            <li><a href="#history" data-toggle="tab">Historie</a></li>
+            <li class="hidden"><a href="#result" data-toggle="tab">Zoek</a></li>
         </ul>
         <div id="cp_tab_content" class="tab-content">
             <div id="library" class="tab-pane">
@@ -55,7 +55,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Date</th>
+                            <th>Datum</th>
                             <th>Log</th>
                         </tr>
                     </thead>
