@@ -13,10 +13,10 @@
                     <i class="fa fa-wrench"></i>&nbsp;<span class="fa fa-caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="${self.attr.webdir}mylar/RefreshComic/${comic_id}" class="ajax-link"><i class="fa fa-refresh"></i> Refresh</a></li>
-                    <li><a href="${self.attr.webdir}mylar/DeleteComic/${comic_id}" class="ajax-link"><i class="fa fa-trash"></i> Delete</a></li>
-                    <li><a href="${self.attr.webdir}mylar/PauseComic/${comic_id}" class="ajax-link"><i class="fa fa-pause"></i> Pause</a></li>
-                    <li><a href="${self.attr.webdir}mylar/ResumeComic/${comic_id}" class="ajax-link"><i class="fa fa-play"></i> Resume</a></li>
+                    <li><a href="${self.attr.webdir}mylar/RefreshComic/${comic_id}" class="ajax-link"><i class="fa fa-refresh"></i> Ververs</a></li>
+                    <li><a href="${self.attr.webdir}mylar/DeleteComic/${comic_id}" class="ajax-link"><i class="fa fa-trash"></i> Verwijder</a></li>
+                    <li><a href="${self.attr.webdir}mylar/PauseComic/${comic_id}" class="ajax-link"><i class="fa fa-pause"></i> Pauzeer</a></li>
+                    <li><a href="${self.attr.webdir}mylar/ResumeComic/${comic_id}" class="ajax-link"><i class="fa fa-play"></i> Herstart</a></li>
                 </ul>
             </div>
         </h1>
@@ -45,17 +45,17 @@
                     <tr><td>Status</td><td class="mylar_status">${comic['Status']}</td></tr>
                     %if comic['ComicID'] is not None:
                         <tr>
-                            <td>Last comic</td>
+                            <td>Laatste comic</td>
                             <td class="mylar_last_comic">${comic['LatestIssue']} (${comic['LatestDate']})</a></td>
                         </tr>
                     %else:
                         <tr>
-                            <td>Last comic</td>
+                            <td>Laatste comic</td>
                             <td>N/A</td>
                         </tr>
                     %endif
                     <tr>
-                        <td>Location</td>
+                        <td>Locatie</td>
                         <td>${comic.get('ComicLocation', '')}</td>
                     </tr>
 
@@ -75,11 +75,11 @@
                 <table class="table table-striped table-condensed table-sortable">
                     <thead>
                     <tr>
-                        <th>Issue</th>
-                        <th>Title</th>
-                        <th>Release Date</th>
+                        <th>Uitgave</th>
+                        <th>Titel</th>
+                        <th>Release Datum</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th>Actie</th>
                     </tr>
                     </thead>
                     <tbody id="comic-issues">
@@ -98,15 +98,15 @@
                         <td>
                             <div class="btn-group">
                             ## % if issue['can_download'] is True:
-                            <a class="btn btn-mini btn-search" title="Set as wanted">
+                            <a class="btn btn-mini btn-search" title="Stel in als gewild">
                                 <i class="fa fa-heart"></i>
                             </a>
                             ## % endif
-                            <a class="btn btn-mini unque-issue-mylar" title="Set as skipped">
+                            <a class="btn btn-mini unque-issue-mylar" title="Stel in als overgeslagen">
                                 <i class="fa fa-step-forward"></i>
                             </a>
                             % if issue['Status'] == 'Downloaded':
-                                <a href="${self.attr.webdir}mylar/DownloadIssue?issueid=${issue['IssueID']}&name=${issue['Location']}"class="btn btn-mini" title="Download to browser" download="${issue['Location']}">
+                                <a href="${self.attr.webdir}mylar/DownloadIssue?issueid=${issue['IssueID']}&name=${issue['Location']}"class="btn btn-mini" title="Download naar browser" download="${issue['Location']}">
                                     <i class="fa fa-download"></i>
                                 </a>
                             % endif

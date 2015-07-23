@@ -14,10 +14,10 @@ ${self.attr.webdir}
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="${self.attr.webdir}headphones/RefreshArtist/${artist_id}" class="ajax-link"><i class="fa fa-refresh"></i> Refresh</a></li>
-                    <li><a href="${self.attr.webdir}headphones/DeleteArtist/${artist_id}" class="ajax-link"><i class="fa fa-trash-o"></i> Delete</a></li>
-                    <li><a href="${self.attr.webdir}headphones/PauseArtist/${artist_id}" class="ajax-link"><i class="fa fa-pause"></i> Pause</a></li>
-                    <li><a href="${self.attr.webdir}headphones/ResumeArtist/${artist_id}" class="ajax-link"><i class="fa fa-play"></i> Resume</a></li>
+                    <li><a href="${self.attr.webdir}headphones/RefreshArtist/${artist_id}" class="ajax-link"><i class="fa fa-refresh"></i> Ververs</a></li>
+                    <li><a href="${self.attr.webdir}headphones/DeleteArtist/${artist_id}" class="ajax-link"><i class="fa fa-trash-o"></i> Verwijder</a></li>
+                    <li><a href="${self.attr.webdir}headphones/PauseArtist/${artist_id}" class="ajax-link"><i class="fa fa-pause"></i> Pauzeer</a></li>
+                    <li><a href="${self.attr.webdir}headphones/ResumeArtist/${artist_id}" class="ajax-link"><i class="fa fa-play"></i> Hervat</a></li>
                 </ul>
             </div>
         </h1>
@@ -32,18 +32,18 @@ ${self.attr.webdir}
             <div class="span8" style="min-height: 0px;"><img class="img-polaroid img-rounded artist_img"></div>
             <div class="artist_details span4 pull-right">
                 <div id="artist_details_top" class="span4"></div>
-                <strong>Artist details</strong>
+                <strong>Artiest details</strong>
                 <table class="table table-condensed">
-                    <tr><td>Tracks</td><td class="headphones_total_tracks"> ${havetracks} / ${totaltracks}</td></tr>
+                    <tr><td>Nummers</td><td class="headphones_total_tracks"> ${havetracks} / ${totaltracks}</td></tr>
                     <tr><td>Status</td><td class="headphones_status">${artist['Status']}</td></tr>
                     %if artist['AlbumID'] is not None:
                         <tr>
-                            <td>Last Album</td>
+                            <td>Nieuwste Album</td>
                             <td class="headphones_last_album"><a href="${self.attr.webdir}headphones/viewAlbum/${artist['AlbumID']}">${artist['LatestAlbum']} (${artist['ReleaseDate']})</a></td>
                         </tr>
                     %else:
                         <tr>
-                            <td>Last Album</td>
+                            <td>Nieuwste Album</td>
                             <td>N/A</td>
                         </tr>
                     %endif
@@ -64,16 +64,16 @@ ${self.attr.webdir}
 
         <div class="tab-content">
             <div id="info" class="tab-pane active">
-                <p>${description['Summary']}</p>
+                <p>${description['Samenvating']}</p>
             </div>
             <div id="albums" class="tab-pane">
                 <table class="table table-striped table-condensed table-sortable">
                     <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Release Date</th>
+                        <th>Titel</th>
+                        <th>Release Datum</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th>Actie</th>
                     </tr>
                     </thead>
                     <tbody id="album-tracks">
@@ -87,11 +87,11 @@ ${self.attr.webdir}
                         <td>
                             <div class="btn-group">
                             % if album['can_download'] is True:
-                            <a class="btn btn-mini btn-search" title="Set as wanted">
+                            <a class="btn btn-mini btn-search" title="Stel in als gewild">
                                 <i class="fa fa-heart"></i>
                             </a>
                             % endif
-                            <a class="btn btn-mini unque-album-hp" title="Set as skipped">
+                            <a class="btn btn-mini unque-album-hp" title="Stel in als overgeslagen">
                                 <i class="fa fa-step-forward"></i>
                             </a>
 
