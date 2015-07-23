@@ -11,19 +11,19 @@
                     <i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu pull-right">
                         %if settings.get('plex_hide_watched', 0):
-                        <li><a href="#" id="hidewatched" class="active"><i class="fa fa-eye"></i> Show Watched</a></li>
+                        <li><a href="#" id="hidewatched" class="active"><i class="fa fa-eye"></i> Weergeef Bekeken</a></li>
                         %else:
-                        <li><a href="#" id="hidewatched"><i class="fa fa-eye"></i> Hide Watched</a></li>
+                        <li><a href="#" id="hidewatched"><i class="fa fa-eye"></i> Verberg Bekeken</a></li>
                         %endif
-                        <li><a href="UpdateLibrary" class="ajax-link"><i class="fa fa-refresh"></i> Update All Sections</a></li>
-                        <li><a href="UpdateLibrary?section_type=movie" class="ajax-link"><i class="fa fa-refresh"></i> Update Movie Section</a></li>
-                        <li><a href="UpdateLibrary?section_type=show" class="ajax-link"><i class="fa fa-refresh"></i> Update TV Show Section</a></li>
-                        <li><a href="UpdateLibrary?section_type=artist" class="ajax-link"><i class="fa fa-refresh"></i> Update Music Section</a></li>
+                        <li><a href="UpdateLibrary" class="ajax-link"><i class="fa fa-refresh"></i> Update Alle Secties</a></li>
+                        <li><a href="UpdateLibrary?section_type=movie" class="ajax-link"><i class="fa fa-refresh"></i> Update Film Sectie</a></li>
+                        <li><a href="UpdateLibrary?section_type=show" class="ajax-link"><i class="fa fa-refresh"></i> Update TV Serie Sectie</a></li>
+                        <li><a href="UpdateLibrary?section_type=artist" class="ajax-link"><i class="fa fa-refresh"></i> Update Muziek Sectie</a></li>
                     </ul>
                 </div>
                 %if settings.get('plex_mac', 0):
                 <div class="btn-group">
-                    <a href="Wake" id="plex_wake_button" class="ajax-link btn"><i class="fa fa-power-off"></i> Wake</a>
+                    <a href="Wake" id="plex_wake_button" class="ajax-link btn"><i class="fa fa-power-off"></i> Maak wakker</a>
                 </div>
                 %endif
             </div>
@@ -33,16 +33,16 @@
 
 
         <ul class="nav nav-tabs">
-            <li><a href="#movies" data-toggle="tab">Movies</a></li>
-            <li><a href="#shows" data-toggle="tab">TV Shows</a></li>
-            <li class="hide"><a href="#episodes" data-toggle="tab">Episodes</a></li>
+            <li><a href="#movies" data-toggle="tab">Films</a></li>
+            <li><a href="#shows" data-toggle="tab">TV Series</a></li>
+            <li class="hide"><a href="#episodes" data-toggle="tab">Afleveringen</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Muziek
                 <i class="fa fa-caret-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#artists" data-toggle="tab">Artists</a></li>
+                    <li><a href="#artists" data-toggle="tab">Artiesten</a></li>
                     <li><a href="#albums" data-toggle="tab">Albums</a></li>
-                    <li><a href="#songs" data-toggle="tab">Songs</a></li>
+                    <li><a href="#songs" data-toggle="tab">Nummers</a></li>
                 </ul>
             </li>
         </ul>
@@ -66,10 +66,10 @@
                 <table id="songs-grid" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Artist</th>
+                            <th>Titel</th>
+                            <th>Artiest</th>
                             <th>Album</th>
-                            <th>Duration</th>
+                            <th>Lengte</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
