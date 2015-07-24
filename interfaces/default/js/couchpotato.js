@@ -93,10 +93,10 @@ function addMovie(movieid, profile, title, catid) {
     }
     $.getJSON(WEBDIR + 'couchpotato/AddMovie', data, function (result) {
         if (result.success) {
-            notify('CouchPotato', 'Added ' + title, 'info');
+            notify('CouchPotato', 'Toegevoegd ' + title, 'info');
             $('a[href=#wanted]').tab('show')
         } else {
-            notify('CouchPotato', 'Failed to add ' + title, 'info')
+            notify('CouchPotato', 'Toevoegen mislukt ' + title, 'info')
         }
     })
 }
@@ -107,9 +107,9 @@ function editMovie(id, profile, title) {
         title: encodeURIComponent(title)
     }, function (result) {
         if (result.success) {
-            notify('CouchPotato', 'Profile changed', 'info')
+            notify('CouchPotato', 'Profiel veranderd', 'info')
         } else {
-            notify('CouchPotato', 'An error occured.', 'error')
+            notify('CouchPotato', 'Er is een fout opgetreden.', 'error')
         }
     })
 }
@@ -119,16 +119,16 @@ function deleteMovie(id, name) {
             $('#' + id).fadeOut()
             getMovieLists();
         } else {
-            notify('CouchPotato', 'An error occured.', 'error')
+            notify('CouchPotato', 'Er is een fout opgetreden.', 'error')
         }
     })
 }
 function refreshMovie(id, name) {
     $.getJSON(WEBDIR + 'couchpotato/RefreshMovie', {id: id}, function (result) {
         if (result.success) {
-            notify('CouchPotato', 'Refreshing: ' + name, 'info')
+            notify('CouchPotato', 'Verversd: ' + name, 'info')
         } else {
-            notify('CouchPotato', 'An error occured.', 'error')
+            notify('CouchPotato', 'Er is een fout opgetreden.', 'error')
         }
     })
 }
@@ -145,7 +145,7 @@ function searchMovie(q) {
                 e.preventDefault()
                 showMovie(movie, cpcat)
             })
-            var src = 'holder.js/100x150/text:No artwork'
+            var src = 'holder.js/100x150/text:Geen afbeelding'
             if (movie.images.poster[0]) {
                 src = WEBDIR + 'couchpotato/GetImage?w=100&h=150&url=' + movie.images.poster[0]
             }
@@ -161,7 +161,7 @@ function getNotificationList() {
     $.getJSON(WEBDIR + 'couchpotato/GetNotificationList', function (result) {
         if (result == null) return
         $.each(result.notifications, function(i, item) {
-            if (!item.read) notify('Notifications', item.message, 'info')
+            if (!item.read) notify('Notificaties', item.message, 'info')
         })
     })
 }
@@ -198,7 +198,7 @@ function showMovie(movie, was_search) {
         year = movie.year;
     }
 
-    var src = 'holder.js/154x231/text:No artwork';
+    var src = 'holder.js/154x231/text:Geen afbeelding';
     if (info.images.poster && info.images.poster[0]) {
         src = WEBDIR + 'couchpotato/GetImage?w=154&h=231&url=' + info.images.poster[0];
     }
@@ -206,11 +206,11 @@ function showMovie(movie, was_search) {
 
     var modalInfo = $('<div>').addClass('modal-movieinfo');
     if (info.runtime) {
-        modalInfo.append($('<p>').html('<b>Runtime:</b> ' + parseSec(info.runtime)));
+        modalInfo.append($('<p>').html('<b>Tijd:</b> ' + parseSec(info.runtime)));
     }
     modalInfo.append($('<p>').html('<b>Plot:</b> ' + plot));
     if (info.directors) {
-        modalInfo.append($('<p>').html('<b>Director:</b> ' + info.directors));
+        modalInfo.append($('<p>').html('<b>Regisseur:</b> ' + info.directors));
     }
     if (info.genres) {
         modalInfo.append($('<p>').html('<b>Genre:</b> ' + info.genres));
@@ -251,7 +251,7 @@ function showMovie(movie, was_search) {
     if (typeof movie.in_wanted === 'undefined' || typeof movie.in_library === 'undefined') {
         modalButtons = {
             'Delete': function () {
-                if (confirm('Do you want to delete: ' + title)) {
+                if (confirm('Wil je verwijderen: ' + title)) {
                     deleteMovie(movie._id, title);
                     hideModal();
                 }
@@ -310,7 +310,7 @@ function showMovie(movie, was_search) {
 
     if (movie.releases && movie.releases.length > 0 && movie.releases.status !== 'done') {
         var strTable = $("<table>").addClass("table table-striped table-hover").append(
-        $("<tr>").append("<th>Action</th>").append("<th>Name</th>").append("<th>Age</th>").append("<th>Score</th>").append("<th>Size</th>"));
+        $("<tr>").append("<th>Actie</th>").append("<th>Naam</th>").append("<th>Leeftijd</th>").append("<th>Score</th>").append("<th>Grootte</th>"));
 
             $.each(movie.releases, function (nIndex, pRelease) {
                 if (pRelease.info === undefined || pRelease.info.id === undefined) {
@@ -327,7 +327,7 @@ function showMovie(movie, was_search) {
                     $.getJSON("DownloadRelease/?id=" + pRelease._id);
                 }),
                 $("<a>").attr("href", "#").append(
-                $("<i>").attr("title", "Ignore").addClass("fa fa-times-circle")).click(function (pEvent) {
+                $("<i>").attr("title", "Negeer").addClass("fa fa-times-circle")).click(function (pEvent) {
                     pEvent.preventDefault();
                     $(this).closest("tr").toggleClass("ignore");
                     $.getJSON("IgnoreRelease/?id=" + pRelease._id);
@@ -369,7 +369,7 @@ function getSuggestions() {
 
 
         if (data === null || data.total === 0) {
-            suggestion.append($("<li>").html("No suggestioned movies found"));
+            suggestion.append($("<li>").html("Geen suggesties gevonden"));
             return;
         }
 
@@ -398,7 +398,7 @@ function getDashboardSoon() {
     $.getJSON(WEBDIR + "couchpotato/DashboardSoon/", function (data) {
 
         if (data === null || data.total === 0) {
-            suggestion.append($("<li>").html("No movies available soon"));
+            suggestion.append($("<li>").html("Geen films binnenkort beschikbaar."));
             return;
         }
 
@@ -431,7 +431,7 @@ function load_sc(movie, was_search) {
     var year = movie.year;
 
 
-var src = 'holder.js/154x231/text:No artwork';
+var src = 'holder.js/154x231/text:Geen afbeelding';
 if (info.images.poster && info.images.poster[0]) {
     src = WEBDIR + 'couchpotato/GetImage?w=154&h=231&url=' + info.images.poster[0];
 }
@@ -439,11 +439,11 @@ var modalImg = $('<img>').attr('src', src).addClass('thumbnail pull-left');
 
 var modalInfo = $('<div>').addClass('modal-movieinfo');
 if (info.runtime) {
-    modalInfo.append($('<p>').html('<b>Runtime:</b> ' + parseSec(info.runtime)));
+    modalInfo.append($('<p>').html('<b>Tijd:</b> ' + parseSec(info.runtime)));
 }
 modalInfo.append($('<p>').html('<b>Plot:</b> ' + plot));
 if (info.directors) {
-    modalInfo.append($('<p>').html('<b>Director:</b> ' + info.directors));
+    modalInfo.append($('<p>').html('<b>Regisseur:</b> ' + info.directors));
 }
 if (info.genres) {
     modalInfo.append($('<p>').html('<b>Genre:</b> ' + info.genres));
@@ -495,12 +495,12 @@ modalButtons = {
     'Ignore': function() {
         $.get(WEBDIR + "couchpotato/SuggestionIgnore/" + info.imdb, function(data) {
             if (data.result) {
-                notify("Marked",  titles.val() + " as ignored", "sucess")
+                notify("Gemarkeerd",  titles.val() + " als genegeerd", "sucess")
                 getCharts();
                 getSuggestions();
                 hideModal();
             } else {
-                notify("Failed", "to mark " + titles.val() + " as ignored", "error")
+                notify("Mislukt", "om te markeren " + titles.val() + " als genegeerd", "error")
                 hideModal();
             }
         })
@@ -508,12 +508,12 @@ modalButtons = {
     'Seen it': function() {
         $.get(WEBDIR + "couchpotato/SuggestionIgnore/?imdb="+ info.imdb + "&seenit=1", function(data) {
             if (data.result) {
-                notify("Marked ",  titles.val() + " as seen", "sucess")
+                notify("Gemarkeerd ",  titles.val() + " als bekeken", "sucess")
                 getCharts();
                 getSuggestions();
                 hideModal();
             } else {
-                notify("Failed ",  "to mark " + titles.val() + " as seen", "error")
+                notify("Mislukt ",  "om te markeren " + titles.val() + " als bekeken", "error")
                 hideModal();
             }
         })
@@ -559,9 +559,9 @@ function Postprocess() {
 function update() {
     $.get(WEBDIR + "couchpotato/Update/", function(data){
         if (data.success) {
-            notify("Couchpotato", "is updating", "success")
+            notify("Couchpotato", "is aan het updaten", "success")
         } else {
-            notify("Couchpotato", "is not updating", "error")
+            notify("Couchpotato", "is niet  aan het updaten", "error")
         }
     })
 }
