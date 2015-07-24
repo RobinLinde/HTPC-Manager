@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="content maincontent sonarr_show">
         <h1 class="page-header page-title" data-showid="${tvdbid}" data-id="${id}">
-            <span class="sonarr_showname">Show details</span>
+            <span class="sonarr_showname">Weergeef details</span>
             <div class="btn-group show-options-menu pull-right">
                 <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-cogs"></i>
@@ -11,17 +11,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#" class="full-update dostuff">Force full update</a>
+                        <a href="#" class="full-update dostuff">Forceer volledige update</a>
                     </li>
                     <li>
-                        <a href="#" class="rescan-files dostuff">Rescan files</a>
+                        <a href="#" class="rescan-files dostuff">Herscan bestanden</a>
                     </li>
                     <li>
-                        <a href="#" class="search_all_ep_in_show dostuff">Search for all episodes</a>
+                        <a href="#" class="search_all_ep_in_show dostuff">Zoek op alle afleveringen</a>
                     </li>
-                    <!--<li><a href="#" class="edit_show">Edit show</a></li>--> <!--TODO -->
+                    <!--<li><a href="#" class="edit_show">Bewerk serie</a></li>--> <!--TODO -->
                     <li>
-                        <a href="#" class="delete_show">Delete show</a> <!-- not done yet -->
+                        <a href="#" class="delete_show">Verwijder serie</a> <!-- not done yet -->
                     </li>
                 </ul>
             </div>
@@ -30,7 +30,7 @@
         <ul class="breadcrumb">
             <li><a href="${self.attr.webdir}">Home</a> <span class="divider">/</span></li>
             <li><a href="${self.attr.webdir}sonarr">${settings.get('sonarr_name', 'Sonarr')}</a> <span class="divider">/</span></li>
-            <li class="active sickbeard_showname">Show details</li>
+            <li class="active sickbeard_showname">Weergeef details</li>
         </ul>
 
         <div id="banner" class="row-fluid banner">
@@ -40,22 +40,22 @@
                 <strong>Show details</strong>
                 <table class="table table-condensed">
                     <tr>
-                        <td>Quality</td><td class="sonarr_want_quality"/>
+                        <td>Kwaliteit</td><td class="sonarr_want_quality"/>
                     </tr>
                     <tr>
-                        <td>Next episode</td><td class="sonarr_next_air"/>
+                        <td>Volgende aflevering</td><td class="sonarr_next_air"/>
                     </tr>
                     <tr>
-                        <td>Airs</td><td class="sonarr_airs"/>
+                        <td>Uitgezonden</td><td class="sonarr_airs"/>
                     </tr>
                     <tr>
                         <td>Status</td><td class="sonarr_status"/>
                     </tr>
                     <tr>
-                        <td>Network</td><td class="sonarr_network"/>
+                        <td>Zender</td><td class="sonarr_network"/>
                     </tr>
                     <tr>
-                        <td>Location</td><td class="sonarr_location"/>
+                        <td>Locatie</td><td class="sonarr_location"/>
                     </tr>
                 </table>
                 <div id="show_details_bottom" class="span4"></div>
@@ -63,7 +63,7 @@
         </div>
 
         <div class="page-header">
-            <h2>Seasons</h2>
+            <h2>Seizoenen</h2>
         </div>
 
         <ul class="nav nav-pills" id="season-list"></ul>
@@ -72,12 +72,12 @@
             <table class="table table-striped table-condensed table-sortable">
                 <thead>
                     <tr>
-                        <th>Episode</th>
-                        <th>Name</th>
-                        <th>Air Date</th>
-                        <th>status</th>
-                        <th>Quality</th>
-                        <th class="span1">Search</th>
+                        <th>Aflevering</th>
+                        <th>Naam</th>
+                        <th>Uitzenddatum</th>
+                        <th>Status</th>
+                        <th>Kwaliteit</th>
+                        <th class="span1">Zoek</th>
                     </tr>
                 </thead>
                 <tbody id="season-content"></tbody>

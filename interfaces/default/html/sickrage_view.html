@@ -3,24 +3,24 @@
 <div class="container-fluid">
     <div class="content maincontent sickrage_show">
         <h1 class="page-header page-title" data-showid="${indexerid}">
-            <span class="sickrage_showname">Show details</span>
+            <span class="sickrage_showname">Weergeef details</span>
             <div class="btn-group show-options-menu pull-right">
                 <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-cogs"></i>&nbsp;<span class="fa fa-caret-down"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#" title="" class="ajax-confirm full-update">Force full update</a>
+                        <a href="#" title="" class="ajax-confirm full-update">Forceer volledige update</a>
                     </li>
                     <li>
-                        <a href="#" title="" class="ajax-confirm rescan-files">Rescan files</a>
+                        <a href="#" title="" class="ajax-confirm rescan-files">Herscan bestanden</a>
                     </li>
                     <li>
-                        <a href="#" title="" class="delete-show">Delete show</a>
+                        <a href="#" title="" class="delete-show">Verwijder serie</a>
                     </li>
                     <!-- Gonna disable this until since the api isnt there yet
                     <li>
-                        <a href="#" class="edit-show">Edit show</a>
+                        <a href="#" class="edit-show">Bewerk serie</a>
                     </li>
                     -->
                 </ul>
@@ -30,33 +30,33 @@
         <ul class="breadcrumb">
             <li><a href="${self.attr.webdir}">Home</a> <span class="divider">/</span></li>
             <li><a href="${self.attr.webdir}sickrage">${settings.get('sickrage_name', 'SickRage')}</a> <span class="divider">/</span></li>
-            <li class="active sickrage_showname">Show details</li>
+            <li class="active sickrage_showname">Weergeef details</li>
         </ul>
 
         <div id="banner" class="row-fluid banner">
             <div class="span8" style="min-height: 0px;"></div>
             <div class="show_details span4 pull-right">
                 <div id="show_details_top" class="span4"></div>
-                <strong>Show details</strong>
+                <strong>Weergeef details</strong>
                 <table class="table table-condensed">
                     <tr>
-                        <td>Next episode</td><td class="sickrage_next_air"/>
+                        <td>Volgende aflevering</td><td class="sickrage_next_air"/>
                     </tr>
                     <tr>
-                        <td>Airs</td><td class="sickrage_airs"/>
+                        <td>Uitgezonden</td><td class="sickrage_airs"/>
                     </tr>
                     <tr>
                         <td>Status</td><td class="sickrage_status"/>
                     </tr>
                     <tr>
-                        <td>Network</td><td class="sickrage_network"/>
+                        <td>Zender</td><td class="sickrage_network"/>
                     </tr>
                     <tr>
-                        <td>Location</td><td class="sickrage_location"/>
+                        <td>Locatie</td><td class="sickrage_location"/>
                     </tr>
 
                     <tr>
-                        <td>Quality</td><td class="sickrage_quality"></td>
+                        <td>Kwaliteit</td><td class="sickrage_quality"></td>
                     </tr>
 
                 </table>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="page-header">
-            <h2>Seasons</h2>
+            <h2>Seizoenen</h2>
         </div>
 
         <ul class="nav nav-pills" id="season-list"></ul>
@@ -74,14 +74,14 @@
             <table class="table table-striped table-condensed table-sortable">
                 <thead>
                     <tr>
-                        <th>Episode</th>
-                        <th>Name</th>
-                        <th>Air Date</th>
-                        <th>status</th>
-                        <th>Quality</th>
-                        <th>Action</th>
-                        <!--<th class="span1">Search</th> -->
-                        <!--<th class="span1">Search subtitle</th>-->
+                        <th>Aflevering</th>
+                        <th>Naam</th>
+                        <th>Uitzenddatum</th>
+                        <th>Status</th>
+                        <th>Kwaliteit</th>
+                        <th>Actie</th>
+                        <!--<th class="span1">Zoek</th> -->
+                        <!--<th class="span1">Zoek ondertiteling</th>-->
                     </tr>
                 </thead>
                 <tbody id="season-content"></tbody>

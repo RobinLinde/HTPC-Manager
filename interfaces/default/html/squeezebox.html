@@ -35,33 +35,33 @@
                         </div>
                         <div class="btn-group">
                             <button class="btn" data-player-control="Shuffle" title="Shuffle"><i class="fa fa-align-right"></i></button>
-                            <button class="btn" data-player-control="Repeat" title="Repeat"><i class="fa fa-repeat"></i></button>
+                            <button class="btn" data-player-control="Repeat" title="Herhalen"><i class="fa fa-repeat"></i></button>
                         </div>
                         <div class="btn-group">
-                            <button class="btn" data-player-control="ClearPlaylist" title="Clear Playlist"><i class="fa fa-times"></i></button>
-                            <button class="btn" data-player-control="SavePlaylist" title="Save Playlist"><i class="fa fa-file-text"></i></button>
+                            <button class="btn" data-player-control="ClearPlaylist" title="Maak afspeellijst leeg"><i class="fa fa-times"></i></button>
+                            <button class="btn" data-player-control="SavePlaylist" title="Sla afspeellijst op"><i class="fa fa-file-text"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#playlist" data-toggle="tab">Playlist</a></li>
-            <li><a href="#artists" data-toggle="tab">Artists</a></li>
+            <li class="active"><a href="#playlist" data-toggle="tab">Afspeellijst</a></li>
+            <li><a href="#artists" data-toggle="tab">Artiesten</a></li>
             <li><a href="#albums" data-toggle="tab">Albums</a></li>
             <li><a href="#stations" data-toggle="tab">Radio</a></li>
-            <li class="hide"><a href="#songs" data-toggle="tab">Songs</a></li>
-            <li><a href="#playlists" data-toggle="tab">Playlists</a></li>
+            <li class="hide"><a href="#songs" data-toggle="tab">Nummers</a></li>
+            <li><a href="#playlists" data-toggle="tab">Afspeellijsten</a></li>
         </ul>
         <div class="tab-content">
             <div id="playlist" class="tab-pane active">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Track</th>
-                            <th>Artist</th>
+                            <th>Nummer</th>
+                            <th>Artiest</th>
                             <th>Album</th>
-                            <th>Duration</th>
+                            <th>Lengte</th>
                         </tr>
                     </thead>
                     <tbody id="playlist_table"></tbody>
@@ -74,17 +74,17 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Track</th>
-                            <th>Artist</th>
+                            <th>Nummer</th>
+                            <th>Artiest</th>
                             <th>Album</th>
-                            <th class="right">Duration</th>
+                            <th class="right">Lengte</th>
                         </tr>
                     </thead>
                     <tbody id="song_table"></tbody>
                 </table>
                 <div class="btn-group pull-right">
-                    <button class="btn" data-player-control="PlayNow" title="Play All"><i class="fa fa-play"></i> Play All</button>
-                    <button class="btn" data-player-control="AddPlaylist" title="Add to Playlist"><i class="fa fa-plus"></i> Add to playlist</button>
+                    <button class="btn" data-player-control="PlayNow" title="Speel Alles"><i class="fa fa-play"></i> Speel Alles</button>
+                    <button class="btn" data-player-control="AddPlaylist" title="Voeg toe aan afspeellijst"><i class="fa fa-plus"></i> Voeg toe aan afspeellijst</button>
                 </div>
             </div>
             <div id="playlists" class="tab-pane sidebar-nav"></div>
