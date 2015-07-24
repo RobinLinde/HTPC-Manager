@@ -61,7 +61,7 @@ function loadRecentMovies () {
             }).append(
                 $('<h4>').html(movie.title + ' (' + movie.year + ')'),
                 $('<p>').html(
-                    '<b>Runtime</b>: ' + parseSec(movie.runtime) + '<br />' +
+                    '<b>Tijd</b>: ' + parseSec(movie.runtime) + '<br />' +
                     '<b>Genre</b>: ' + movie.genre.join(', ') + '<br />' +
                     movie.plot
                 ).hide()
@@ -97,7 +97,7 @@ function loadRecentTVshows () {
             }).append(
                 $('<h4>').html(episode.showtitle + ': ' + episode.label),
                 $('<p>').html(
-                    '<b>Runtime</b>: ' + parseSec(episode.runtime) + '<br />' + episode.plot
+                    '<b>Tijd</b>: ' + parseSec(episode.runtime) + '<br />' + episode.plot
                 ).hide()
             ))
             $('#tvshow-carousel .carousel-inner').append(itemDiv)
@@ -155,7 +155,7 @@ function loadRecentAlbums () {
 			.append(
                 $('<h4>').html(album.label + ' (' + album.year + ')'),
                 $('<p>').html(
-                    '<b>Artist</b>: ' + album.artist[0] + '<br />'
+                    '<b>Artiest</b>: ' + album.artist[0] + '<br />'
                 ).hide()
             )
 			)
@@ -184,7 +184,7 @@ function loadRecentMoviesPlex () {
             }).append(
                 $('<h4>').html(movie.title + ' (' + movie.year + ')'),
                 $('<p>').html(
-                    '<b>Runtime</b>: ' + parseSec(movie.runtime) + '<br />' +
+                    '<b>Tijd</b>: ' + parseSec(movie.runtime) + '<br />' +
                     '<b>Genre</b>: ' + movie.genre.join(', ') + '<br />' +
                     movie.plot
                 ).hide()
@@ -213,7 +213,7 @@ function loadRecentTVshowsPlex () {
             }).append(
                 $('<h4>').html(episode.showtitle + ': ' + episode.label),
                 $('<p>').html(
-                    '<b>Runtime</b>: ' + parseSec(episode.runtime) + '<br />' + episode.plot
+                    '<b>Tijd</b>: ' + parseSec(episode.runtime) + '<br />' + episode.plot
                 ).hide()
             ))
             $('#tvshow-carousel-plex .carousel-inner').append(itemDiv)
@@ -368,7 +368,7 @@ function loadNextAiredSickrage(options) {
     $.getJSON(WEBDIR + 'sickrage/GetNextAired', function (result) {
         if (result === null) {
             $('#nextairedsickrage_table_body').append(
-                $('<tr>').append($('<td>').html('No connection with sickrage')),
+                $('<tr>').append($('<td>').html('Geen verbinding met sickrage')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
@@ -378,7 +378,7 @@ function loadNextAiredSickrage(options) {
         };
         if (result.data.soon.length === 0 && result.data.later.length === 0 && result.data.today.length === 0 && result.data.missed.length === 0) {
             $('#nextairedsickrage_table_body').append(
-                $('<tr>').append($('<td>').html('No future/missing episodes found')),
+                $('<tr>').append($('<td>').html('Geen toekomstige/missende afleveringen gevonden')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
                 $('<tr>').append($('<td>').html('&nbsp;')),
@@ -427,7 +427,7 @@ function loadsysinfo(options) {
             ),
 
             $('<tr>').append(
-                $('<td>').text('Network'),
+                $('<td>').text('Netwerk'),
                 $('<td>').append(
                     $('<div>').append(
                         $('<div class="pull-left">').html('<i class="fa fa-arrow-down"></i> ' + getReadableFileSizeString(result.network.bytes_recv)),
@@ -473,7 +473,7 @@ function loadsmartinfo() {
             'success': function (response) {
             if (response == null || response.length == 0 || jQuery.isEmptyObject(response)) {
                     var row = $('<tr>');
-                    row.append($('<td>').text("S.M.A.R.T not correctly configured."));
+                    row.append($('<td>').text("S.M.A.R.T niet correct geconfigureerd."));
                     $('#dash_smart_table_body').append(row);
             } else {
                 byteSizeOrdering()
@@ -542,14 +542,14 @@ function loadqbit() {
                         $('<td>').addClass('qbit_eta alignright').text(torrent.eta));
                         $('#dash_qbit_table_body').append(tr);
                     } else {
-                        tr.append($('<td>').addClass('span6 aligncenter').attr("colspan",2).html("<small>" + (i - max) + " more torrents</small>"))
+                        tr.append($('<td>').addClass('span6 aligncenter').attr("colspan",2).html("<small>" + (i - max) + " meer torrents</small>"))
                         $('#dash_qbit_table_body').append(tr);
                         return false;
                     }
                 });
             } else {
                 tr = $('<tr>');
-                tr.append($('<td>').addClass('span6 aligncenter').attr("colspan",2).html("<small>No active downloads</small>"))
+                tr.append($('<td>').addClass('span6 aligncenter').attr("colspan",2).html("<small>Geen actieve downloads</small>"))
                 $('#dash_qbit_table_body').append(tr);
             }
         }
@@ -559,7 +559,7 @@ function loadqbit() {
 function start_refresh(module, fn){
     if ($('#dash_'+module).children('h3:first-child').has('.refresh-btns').length == 0){
         $('#dash_'+module).children('h3:first-child').append('<span class="refresh-btns">' +
-                                '<i id="'+module+'-refresh" class="btn fa fa-refresh" style="font-size:0.6em" title="Refresh" onclick="'+fn+'();"></i>' +
+                                '<i id="'+module+'-refresh" class="btn fa fa-refresh" style="font-size:0.6em" title="Ververs" onclick="'+fn+'();"></i>' +
                                 '<i class="fa fa-spinner fa-pulse" style="font-size:0.7em" id="'+module+'-spinner"></i></span>');
     }
     $('#'+module+'-refresh').hide();
