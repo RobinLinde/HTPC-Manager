@@ -73,7 +73,7 @@ webdir = htpc.WEBDIR
                     <% customurls = s.getUrls() %>
                     % if len(customurls) > 1:
                     <li class="dropdown" id="nav-menu-others">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="fa fa-caret-down"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anders <b class="fa fa-caret-down"></b></a>
                         <ul class="dropdown-menu">
                         % for link in customurls:
                             <li class="nav-menu-item other-link-item"><a href="${link['url']|h, entity}" target="_blank">${link['name']|h, entity}</a></li>
@@ -106,14 +106,14 @@ webdir = htpc.WEBDIR
                     </li>
                     % if htpc.AUTH:
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}logout" class="confirm" title="Logout of HTPC Manager"><i class="fa fa-sign-out"></i> Log Uit</a>
+                        <a href="${htpc.WEBDIR}logout" class="confirm" title="Uitloggen uit HTPC Manager"><i class="fa fa-sign-out"></i> Log Uit</a>
                     </li>
                     % endif
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Restart HTPC Manager"><i class="fa fa-refresh"></i> Herstart</a>
+                        <a href="${htpc.WEBDIR}restart" class="ajax-confirm" title="Herstart HTPC Manager"><i class="fa fa-refresh"></i> Herstart</a>
                     </li>
                     <li class="hidden-desktop visible-phone visible-tablet">
-                        <a href="${htpc.WEBDIR}shutdown" class="confirm" title="Shutdown HTPC Manager"><i class="fa fa-power-off"></i> Sluit Af</a>
+                        <a href="${htpc.WEBDIR}shutdown" class="confirm" title="Sluit HTPC Manager af"><i class="fa fa-power-off"></i> Sluit Af</a>
                     </li>
 
                 </ul>
